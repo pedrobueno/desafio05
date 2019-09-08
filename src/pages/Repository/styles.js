@@ -40,11 +40,46 @@ export const Owner = styled.header`
   }
 `;
 
+export const ButtonIssue = styled.button.attrs({
+  type: 'button',
+})`
+  font-size: 16px;
+  color: ${props => (props.active ? '#FFF' : '#333')};
+  background: ${props => (props.active ? '#333' : '#eee')};
+  border: 0;
+  border-radius: 4px;
+  margin-left: 10px;
+  padding: 10px;
+  border: 2px solid transparent;
+
+  &:hover {
+    border: 2px solid #7159c1;
+  }
+
+  &[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    border: 2px solid transparent;
+  }
+`;
+
 export const IssueList = styled.div`
   padding-top: 30px;
   margin-top: 30px;
   border-top: 1px solid #eee;
   list-style: none;
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    margin-top: 10px;
+
+    span {
+      margin: 0 15px;
+    }
+  }
 
   li {
     display: flex;
@@ -64,9 +99,11 @@ export const IssueList = styled.div`
     }
 
     div {
-      flex: 1;
       margin-left: 15px;
-
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
       strong {
         font-size: 16px;
 

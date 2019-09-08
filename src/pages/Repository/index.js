@@ -5,12 +5,20 @@ import { Link } from 'react-router-dom';
 import api from '../../services/api';
 
 import Container from '../../components/Container';
-import { Loadding, Owner, IssueList } from './styles';
+import { Loadding, Owner, IssueList, ButtonIssue } from './styles';
 
 function Repository({ match }) {
   const [repository, setRepository] = useState({});
   const [issues, setIssues] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [issueState, setIssueState] = useState('all');
+  const [page, setPage] = useState(1);
+
+  const issueOptions = [
+    { value: 'all', label: 'Todas' },
+    { value: 'open', label: 'Abertas' },
+    { value: 'closed', label: 'Fechadas' },
+  ];
 
   useEffect(() => {
     async function getRepo() {
@@ -21,8 +29,9 @@ function Repository({ match }) {
         api.get(`/repos/${repoName}`),
         api.get(`/repos/${repoName}/issues`, {
           params: {
-            state: 'open',
-            per_page: 5,
+            state: issueState,
+            per_page: 10,
+            page,
           },
         }),
       ]);
@@ -33,7 +42,7 @@ function Repository({ match }) {
     }
 
     getRepo();
-  }, []);
+  }, [issueState, page]);
 
   if (loading) {
     return <Loadding>Carregando</Loadding>;
@@ -49,6 +58,17 @@ function Repository({ match }) {
         <p>{repository.description}</p>
       </Owner>
       <IssueList>
+        <div>
+          {issueOptions.map(option => (
+            <ButtonIssue
+              key={option.value}
+              active={option.value === issueState}
+              onClick={() => setIssueState(option.value)}
+            >
+              {option.label}
+            </ButtonIssue>
+          ))}
+        </div>
         {issues.map(issue => (
           <li key={String(issue.id)}>
             <img src={issue.user.avatar_url} alt={issue.user.login} />
@@ -69,6 +89,15 @@ function Repository({ match }) {
             </div>
           </li>
         ))}
+        <div>
+          <ButtonIssue disabled={page === 1} onClick={() => setPage(page - 1)}>
+            Página Anterior
+          </ButtonIssue>
+          <span>Página {page}</span>
+          <ButtonIssue onClick={() => setPage(page + 1)}>
+            Próxima Página
+          </ButtonIssue>
+        </div>
       </IssueList>
     </Container>
   );
