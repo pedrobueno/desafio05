@@ -78,6 +78,7 @@ export const IssueList = styled.div`
 
     span {
       margin: 0 15px;
+      font-size: 16px;
     }
   }
 
