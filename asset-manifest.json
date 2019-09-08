@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/desafio05/static/js/main.9bed7b64.chunk.js",
-    "main.js.map": "/desafio05/static/js/main.9bed7b64.chunk.js.map",
+    "main.js": "/desafio05/static/js/main.76099ca4.chunk.js",
+    "main.js.map": "/desafio05/static/js/main.76099ca4.chunk.js.map",
     "runtime~main.js": "/desafio05/static/js/runtime~main.54e2a6be.js",
     "runtime~main.js.map": "/desafio05/static/js/runtime~main.54e2a6be.js.map",
     "static/js/2.260c2f19.chunk.js": "/desafio05/static/js/2.260c2f19.chunk.js",
     "static/js/2.260c2f19.chunk.js.map": "/desafio05/static/js/2.260c2f19.chunk.js.map",
     "index.html": "/desafio05/index.html",
-    "precache-manifest.951687e0badd6d1d0a6dcb5e693b2bee.js": "/desafio05/precache-manifest.951687e0badd6d1d0a6dcb5e693b2bee.js",
+    "precache-manifest.97ca60cff9557de8fc9196fdf26253af.js": "/desafio05/precache-manifest.97ca60cff9557de8fc9196fdf26253af.js",
     "service-worker.js": "/desafio05/service-worker.js"
   }
 }
