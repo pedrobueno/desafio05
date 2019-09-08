@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.js": "/desafio05/static/js/main.4c26071a.chunk.js",
+    "main.js.map": "/desafio05/static/js/main.4c26071a.chunk.js.map",
+    "runtime~main.js": "/desafio05/static/js/runtime~main.54e2a6be.js",
+    "runtime~main.js.map": "/desafio05/static/js/runtime~main.54e2a6be.js.map",
+    "static/js/2.260c2f19.chunk.js": "/desafio05/static/js/2.260c2f19.chunk.js",
+    "static/js/2.260c2f19.chunk.js.map": "/desafio05/static/js/2.260c2f19.chunk.js.map",
+    "index.html": "/desafio05/index.html",
+    "precache-manifest.1cb0b37eb891b1bce5e938918a02b54b.js": "/desafio05/precache-manifest.1cb0b37eb891b1bce5e938918a02b54b.js",
+    "service-worker.js": "/desafio05/service-worker.js"
+  }
+}
